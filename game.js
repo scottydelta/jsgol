@@ -40,6 +40,7 @@ function populate(){
 	    }
         }
     }
+    setInterval(function(){nextGen();}, 10);
 }
 init();
 populate();
@@ -58,16 +59,19 @@ function nextGen(){
         if(neighborExists(i+1, j+1)) neighbors++;
         if(neighborExists(i-1, j+1)) neighbors++;
         if(neighborExists(i+1, j-1)) neighbors++;
-
         return neighbors;
     }
 
     for(var i=0; i<grid.length; i++){
         for(var j=0; j<grid[i].length; j++){
             neighbors = neighborCount(i,j);
-             
+            if(neighbors < 2 || neighbors > 3) grid[i][j] = 0;
+            if(neighbors == 1 && (neighbors == 2 || neighbors == 3)) grid[i][j] = 1; 
+            if(neighbors == 0 && neighbors == 3) grid[i][j] = 1;
+       
         }
-    } 
+    }
+    populate(); 
 }
 
 
