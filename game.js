@@ -83,10 +83,9 @@ $( document ).ready(function() {
                         nextGrid[i] = [];
                         for(var j=0; j<grid[i].length; j++){
                                 var neighbors = neighborCount(i,j);
+                                nextGrid[i][j] = grid[i][j];
                                 if(neighbors < 2 || neighbors > 3) nextGrid[i][j] = 0;
-                                if(grid[i][j] == 1 && (neighbors == 2 || neighbors == 3)) nextGrid[i][j] = 1;
-                                if(grid[i][j] == 0 && neighbors == 3) nextGrid[i][j] = 1;
-                                
+                                if(grid[i][j] == 0 && neighbors == 3) nextGrid[i][j] = 1;                              
                         }
                 }
                 grid = nextGrid;
