@@ -5,6 +5,6 @@ The simulation shows the Conway's game of Life with a random configuration and g
 
 It has a slider that helps control the timeout which inversly affects the speed.
 
-
+[DEMO](http://scottydelta.github.io/jsgol/)
 
 
